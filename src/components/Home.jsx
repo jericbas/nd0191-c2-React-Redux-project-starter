@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import QuestionList from './QuestionList';
 
 function Home() {
-  const [activeTab, setActiveTab] = useState('unanswered');
   const authedUser = useSelector((state) => state.authedUser);
   const users = useSelector((state) => state.users);
   const questions = useSelector((state) => state.questions);
@@ -24,26 +22,18 @@ function Home() {
   return (
     <div className="home">
       <h2>Polls</h2>
-      <div className="tabs">
-        <button
-          className={activeTab === 'unanswered' ? 'active' : ''}
-          onClick={() => setActiveTab('unanswered')}
-          data-testid="tab-unanswered"
-        >
-          Unanswered
-        </button>
-        <button
-          className={activeTab === 'answered' ? 'active' : ''}
-          onClick={() => setActiveTab('answered')}
-          data-testid="tab-answered"
-        >
-          Answered
-        </button>
+      <div className="content-sections">
+        <section className="section">
+          <h3 className="section-title">New Questions</h3>
+          <p className="section-subtitle">Pending Tasks</p>
+          <QuestionList questions={unanswered} users={users} />
+        </section>
+        <section className="section">
+          <h3 className="section-title">Done</h3>
+          <p className="section-subtitle">Completed Tasks</p>
+          <QuestionList questions={answered} users={users} />
+        </section>
       </div>
-      <QuestionList
-        questions={activeTab === 'unanswered' ? unanswered : answered}
-        users={users}
-      />
     </div>
   );
 }

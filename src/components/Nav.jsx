@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { handleLogout } from '../actions/auth';
 
 function Nav() {
@@ -17,16 +17,16 @@ function Nav() {
 
   return (
     <nav className="nav">
-      <ul>
-        <li><Link data-testid="nav-home" to="/">Home</Link></li>
-        <li><Link data-testid="nav-leaderboard" to="/leaderboard">Leaderboard</Link></li>
-        <li><Link data-testid="nav-new" to="/add">New</Link></li>
-      </ul>
+      <div className="nav-left">
+        <NavLink data-testid="nav-home" to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Home</NavLink>
+        <NavLink data-testid="nav-leaderboard" to="/leaderboard" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Leaderboard</NavLink>
+        <NavLink data-testid="nav-new" to="/add" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>New</NavLink>
+      </div>
       {user && (
-        <div className="user-info">
-          <span>{user.name}</span>
+        <div className="nav-right">
           <img src={user.avatarURL} alt={user.name} className="avatar-small" />
-          <button onClick={onLogout} data-testid="logout-button">Logout</button>
+          <span className="user-name">{user.name}</span>
+          <button onClick={onLogout} data-testid="logout-button" className="logout-btn">Logout</button>
         </div>
       )}
     </nav>

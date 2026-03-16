@@ -20,8 +20,8 @@ function NewPoll() {
 
   return (
     <div className="new-poll">
-      <h2>Create New Poll</h2>
-      <h3>Would You Rather</h3>
+      <h2>Would You Rather</h2>
+      <h3>Create Your Own Poll</h3>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="optionOne">First Option</label>
@@ -30,7 +30,7 @@ function NewPoll() {
             id="optionOne"
             value={optionOne}
             onChange={(e) => setOptionOne(e.target.value)}
-            placeholder="Enter first option"
+            placeholder="Option One"
             data-testid="option-one-input"
           />
         </div>
@@ -41,7 +41,7 @@ function NewPoll() {
             id="optionTwo"
             value={optionTwo}
             onChange={(e) => setOptionTwo(e.target.value)}
-            placeholder="Enter second option"
+            placeholder="Option Two"
             data-testid="option-two-input"
           />
         </div>
