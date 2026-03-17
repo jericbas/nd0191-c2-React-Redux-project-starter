@@ -11,8 +11,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -179,19 +179,15 @@ code {
   outline-offset: 2px;
 }
 
-/* Tabs - DEPRECATED: Using content sections instead */
-
-/* Content Sections */
 .content-sections {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
   margin-top: 24px;
+  padding: 20px;
 }
 
 .section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .section-title {
@@ -210,7 +206,7 @@ code {
 
 .question-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
 }
 
@@ -390,4 +386,17 @@ code {
   .poll-unanswered .options {
     grid-template-columns: 1fr;
   }
+}
+
+.new-poll {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
