@@ -400,3 +400,34 @@ code {
   flex-direction: column;
   gap: 8px;
 }
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.leaderboard h2 {
+  margin-bottom: 20px;
+}
+
+.leaderboard table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: "red";
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+}
+
+.user-cell .user-id {
+  font-size: 12px;
+  text-align: left;
+}
