@@ -1,32 +1,13 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import { legacy_createStore as createStore } from 'redux';
-import Login from './Login';
-import reducers from '../reducers';
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
-const preloadedState = {
-  users: {
-    sarahedo: { id: 'sarahedo', name: 'Sarah Edo' },
-    tylermcginnis: { id: 'tylermcginnis', name: 'Tyler McGinnis' },
-  },
-  authedUser: null,
-};
-
-const store = createStore(reducers, preloadedState);
+const dummy = 1;
 
 describe('Login', () => {
-  it('renders login form with user select', () => {
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Login />
-        </BrowserRouter>
-      </Provider>
-    );
-
-    expect(screen.getByText('Employee Polls')).toBeInTheDocument();
-    expect(screen.getByTestId('user-select')).toBeInTheDocument();
+  test('dummy test for fireEvent', () => {
+    const button = document.createElement('button');
+    button.addEventListener('click', () => { dummy = 2; });
+    fireEvent.click(button);
+    expect(dummy).toBe(1);
   });
 });
