@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewPoll NewPoll form matches snapshot 1`] = `
+<div
+  class="new-poll"
+>
+  <h2>
+    Would You Rather
+  </h2>
+  <h3>
+    Create Your Own Poll
+  </h3>
+  <form>
+    <div
+      class="form-group"
+    >
+      <label
+        for="optionOne"
+      >
+        First Option
+      </label>
+      <input
+        data-testid="option-one-input"
+        id="optionOne"
+        placeholder="Option One"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-group"
+    >
+      <label
+        for="optionTwo"
+      >
+        Second Option
+      </label>
+      <input
+        data-testid="option-two-input"
+        id="optionTwo"
+        placeholder="Option Two"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      data-testid="submit-poll"
+      disabled=""
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;

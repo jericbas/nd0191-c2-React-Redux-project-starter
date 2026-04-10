@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionCard QuestionCard matches snapshot 1`] = `
+<div
+  class="question-card"
+  data-testid="question-card"
+>
+  <div
+    class="card-header"
+  >
+    <img
+      alt="Sarah Edo"
+      class="avatar"
+      src="https://avatars.miraheze.org/avatar/SarahEdo.jpg"
+    />
+    <div>
+      <p>
+        Sarah Edo
+      </p>
+      <p
+        class="timestamp"
+      >
+        4/11/2026, 12:44:38 AM
+      </p>
+    </div>
+  </div>
+  <div
+    class="card-body"
+  >
+    <p>
+      Would you rather...
+    </p>
+    <p
+      class="preview"
+    >
+      Learn React
+       
+      <strong>
+        or
+      </strong>
+       
+      Learn Vue
+      ?
+    </p>
+  </div>
+  <div
+    class="card-footer"
+  >
+    <a
+      class="btn-show"
+      data-testid="show-button"
+      href="/questions/q1"
+    >
+      Show
+    </a>
+  </div>
+</div>
+`;

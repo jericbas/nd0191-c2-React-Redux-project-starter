@@ -14,7 +14,7 @@ const mockQuestion = {
     votes: ['user2'],
   },
   author: 'sarahedo',
-  timestamp: Date.now(),
+  timestamp: 1775839478000,
 };
 
 const mockAuthor = {
@@ -60,7 +60,8 @@ describe('QuestionCard', () => {
         <QuestionCard question={mockQuestion} author={mockAuthor} />
       </BrowserRouter>
     );
-    expect(screen.getByText(/Learn React.*or.*Learn Vue/)).toBeInTheDocument();
+    expect(screen.getByText(/Learn React/)).toBeInTheDocument();
+    expect(screen.getByText(/Learn Vue/)).toBeInTheDocument();
   });
 
   test('renders "Show" button linking to question details', () => {

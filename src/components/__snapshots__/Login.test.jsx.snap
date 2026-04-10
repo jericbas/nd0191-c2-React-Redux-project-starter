@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Login form match snapshot 1`] = `
+<div
+  class="login-container"
+>
+  <h2>
+    Employee Polls
+  </h2>
+  <h3>
+    Login
+  </h3>
+  <form>
+    <select
+      data-testid="user-select"
+    >
+      <option
+        value=""
+      >
+        Select a user
+      </option>
+      <option
+        value="sarahedo"
+      >
+        Sarah Edo
+      </option>
+      <option
+        value="johndoe"
+      >
+        John Doe
+      </option>
+    </select>
+    <button
+      data-testid="login-button"
+      disabled=""
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
