@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import QuestionList from './QuestionList';
 
 function Home() {
+  const [showAnswered, setShowAnswered] = useState(false);
   const authedUser = useSelector((state) => state.authedUser);
   const users = useSelector((state) => state.users);
   const questions = useSelector((state) => state.questions);
@@ -19,21 +21,30 @@ function Home() {
     .filter((q) => !answeredIds.includes(q.id))
     .sort((a, b) => b.timestamp - a.timestamp);
 
+  const displayedQuestions = showAnswered ? answered : unanswered;
+  const displayTitle = showAnswered ? 'Answered Polls' : 'Unanswered Polls';
+
   return (
     <div className="home">
       <h2>Polls</h2>
-      <div className="content-sections">
-        <section className="section">
-          <h3 className="section-title">New Questions</h3>
-          <p className="section-subtitle">Pending Tasks</p>
-          <QuestionList questions={unanswered} users={users} />
-        </section>
-        <section className="section">
-          <h3 className="section-title">Done</h3>
-          <p className="section-subtitle">Completed Tasks</p>
-          <QuestionList questions={answered} users={users} />
-        </section>
+      <div className="poll-toggle">
+        <button
+          className={`toggle-btn ${!showAnswered ? 'active' : ''}`}
+          onClick={() => setShowAnswered(false)}
+        >
+          Unanswered
+        </button>
+        <button
+          className={`toggle-btn ${showAnswered ? 'active' : ''}`}
+          onClick={() => setShowAnswered(true)}
+        >
+          Answered
+        </button>
       </div>
+      <section className="section">
+        <h3 className="section-title">{displayTitle}</h3>
+        <QuestionList questions={displayedQuestions} users={users} />
+      </section>
     </div>
   );
 }
