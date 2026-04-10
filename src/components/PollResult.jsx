@@ -11,6 +11,7 @@ function PollResult({ question, authedUser }) {
 
   return (
     <div className="poll-result">
+      <h2>Would You Rather</h2>
       <h3>Results</h3>
       <div className={`option-result ${userVotedOptionOne ? 'voted' : ''}`}>
         {userVotedOptionOne && <span className="voted-badge">Your vote</span>}
