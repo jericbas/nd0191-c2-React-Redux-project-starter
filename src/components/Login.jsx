@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { handleLogin } from '../actions/auth';
 
 function Login() {
   const [selectedUser, setSelectedUser] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
   const users = useSelector((state) => state.users);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedUser) {
       dispatch(handleLogin(selectedUser));
-      navigate('/');
+      const from = location.state?.from?.pathname || '/';
+      navigate(from, { replace: true });
     }
   };
 

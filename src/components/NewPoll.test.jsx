@@ -32,12 +32,19 @@ const createMockStore = () => {
   });
 };
 
+const routerFuture = {
+  future: {
+    v7_startTransition: true,
+    v7_relativeSplatPath: true,
+  },
+};
+
 describe('NewPoll', () => {
   test('renders the NewPoll form with heading', () => {
     const store = createMockStore();
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter {...routerFuture}>
           <NewPoll />
         </BrowserRouter>
       </Provider>
@@ -50,7 +57,7 @@ describe('NewPoll', () => {
     const store = createMockStore();
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter {...routerFuture}>
           <NewPoll />
         </BrowserRouter>
       </Provider>
@@ -63,7 +70,7 @@ describe('NewPoll', () => {
     const store = createMockStore();
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter {...routerFuture}>
           <NewPoll />
         </BrowserRouter>
       </Provider>
@@ -77,7 +84,7 @@ describe('NewPoll', () => {
     const store = createMockStore();
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter {...routerFuture}>
           <NewPoll />
         </BrowserRouter>
       </Provider>
@@ -96,7 +103,7 @@ describe('NewPoll', () => {
     const store = createMockStore();
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter {...routerFuture}>
           <NewPoll />
         </BrowserRouter>
       </Provider>
@@ -113,7 +120,7 @@ describe('NewPoll', () => {
     const store = createMockStore();
     const { container } = render(
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter {...routerFuture}>
           <NewPoll />
         </BrowserRouter>
       </Provider>

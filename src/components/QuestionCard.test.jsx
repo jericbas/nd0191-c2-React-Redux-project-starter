@@ -3,6 +3,13 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import QuestionCard from './QuestionCard';
 
+const routerFuture = {
+  future: {
+    v7_startTransition: true,
+    v7_relativeSplatPath: true,
+  },
+};
+
 const mockQuestion = {
   id: 'q1',
   optionOne: {
@@ -28,7 +35,7 @@ const mockAuthor = {
 describe('QuestionCard', () => {
   test('renders the question card', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter {...routerFuture}>
         <QuestionCard question={mockQuestion} author={mockAuthor} />
       </BrowserRouter>
     );
@@ -38,7 +45,7 @@ describe('QuestionCard', () => {
 
   test('displays author name', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter {...routerFuture}>
         <QuestionCard question={mockQuestion} author={mockAuthor} />
       </BrowserRouter>
     );
@@ -47,7 +54,7 @@ describe('QuestionCard', () => {
 
   test('displays "Would you rather..." text', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter {...routerFuture}>
         <QuestionCard question={mockQuestion} author={mockAuthor} />
       </BrowserRouter>
     );
@@ -56,7 +63,7 @@ describe('QuestionCard', () => {
 
   test('displays both question options in preview', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter {...routerFuture}>
         <QuestionCard question={mockQuestion} author={mockAuthor} />
       </BrowserRouter>
     );
@@ -66,7 +73,7 @@ describe('QuestionCard', () => {
 
   test('renders "Show" button linking to question details', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter {...routerFuture}>
         <QuestionCard question={mockQuestion} author={mockAuthor} />
       </BrowserRouter>
     );
@@ -77,7 +84,7 @@ describe('QuestionCard', () => {
 
   test('QuestionCard matches snapshot', () => {
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter {...routerFuture}>
         <QuestionCard question={mockQuestion} author={mockAuthor} />
       </BrowserRouter>
     );
